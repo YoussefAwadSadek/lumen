@@ -1,0 +1,206 @@
+.scrim {
+  z-index: 600;
+  backdrop-filter: var(--ak-blur-glass);
+  -webkit-backdrop-filter: var(--ak-blur-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.panel {
+  width: min(980px, 96vw);
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--ak-surface-1);
+  border-radius: var(--ak-radius-2xl);
+  box-shadow: var(--ak-shadow-elevated);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+}
+.close:hover,
+.control:hover { background: var(--ak-surface-2); }
+
+/* ── Viewer ── */
+.stage {
+  flex: 1.15 1 400px;
+  min-width: 0;
+  min-height: 460px;
+  position: relative;
+  background: radial-gradient(circle at 50% 32%, #2a0f11 0%, #0a0506 74%);
+  border-radius: var(--ak-radius-2xl) 0 0 var(--ak-radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  cursor: grab;
+  touch-action: none;
+}
+.stage:active { cursor: grabbing; }
+.tilt { transform-style: preserve-3d; will-change: transform; }
+.zoom { position: relative; will-change: transform; }
+.image {
+  display: block;
+  max-width: min(420px, 74vw);
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: var(--ak-radius-lg);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.55));
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+.sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--ak-radius-lg);
+  background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.13) 50%, transparent 58%);
+  background-size: 240% 100%;
+  background-position: 50% 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hint {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+.hintPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: var(--ak-t-caption);
+  color: var(--ak-text-faint);
+  background: var(--ak-surface-glass);
+  backdrop-filter: var(--ak-blur-soft);
+  -webkit-backdrop-filter: var(--ak-blur-soft);
+  padding: 7px 14px;
+  border-radius: var(--ak-radius-full);
+}
+
+.controls {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.control { width: 40px; height: 40px; }
+.controlOn { color: var(--ak-gold); }
+
+/* ── Details ── */
+.details {
+  flex: 1 1 340px;
+  min-width: 0;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+}
+.overline {
+  font: var(--ak-t-overline);
+  letter-spacing: var(--ak-tracking-wide);
+  color: var(--ak-gold);
+  text-transform: uppercase;
+}
+.name {
+  font: 800 2rem/1.15 'Cairo', sans-serif;
+  color: var(--ak-text-strong);
+  margin: 10px 0 6px;
+}
+.rating { display: flex; align-items: center; gap: 8px; }
+.stars { color: var(--ak-gold); letter-spacing: 2px; font-size: 0.9rem; }
+.ratingText { font: var(--ak-t-caption); color: var(--ak-text-faint); }
+.desc { font: var(--ak-t-body-sm); color: var(--ak-text-muted); margin: 16px 0 0; }
+
+.prices { display: flex; align-items: baseline; gap: 12px; margin: 18px 0 0; }
+.price { font: 700 1.8rem/1 'Space Grotesk', sans-serif; color: var(--ak-text-strong); }
+.oldPrice {
+  font: 500 1.05rem/1 'Space Grotesk', sans-serif;
+  color: var(--ak-text-faint);
+  text-decoration: line-through;
+}
+.badge {
+  font: 700 0.7rem/1 'Space Grotesk', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: var(--ak-radius-sm);
+}
+.badgeGold { background: var(--ak-pair-badge-gold-bg); color: var(--ak-pair-badge-gold-fg); }
+.badgeCrimson { background: var(--ak-pair-badge-crimson-bg); color: var(--ak-pair-badge-crimson-fg); }
+.stock { font: var(--ak-t-caption); color: var(--ak-text-muted); margin-top: 8px; }
+.stockWarn { color: var(--ak-pair-timer-warn-fg); }
+
+.colors { margin-top: 22px; }
+.colorsLabel { font: var(--ak-t-label); color: var(--ak-text-muted); margin-bottom: 10px; }
+.swatches { display: flex; gap: 10px; }
+.swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22);
+  transition: transform 180ms;
+}
+.swatch:hover { transform: scale(1.12); }
+.swatchOn { box-shadow: var(--ak-glow-gold-selected); }
+
+.specs { display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+.spec { display: flex; gap: 8px; align-items: center; }
+.specIcon { color: var(--ak-gold); }
+.specText { font: var(--ak-t-caption); color: var(--ak-text-muted); }
+
+.buy { display: flex; gap: 12px; align-items: stretch; margin-top: 26px; flex-wrap: wrap; }
+.stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--ak-border-soft);
+  border-radius: var(--ak-radius-md);
+}
+.step {
+  width: 44px;
+  height: 50px;
+  background: none;
+  border: none;
+  color: var(--ak-text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step:hover { color: var(--ak-gold); }
+.qty {
+  min-width: 28px;
+  text-align: center;
+  font: 700 1.05rem/1 'Space Grotesk', sans-serif;
+  color: var(--ak-text-strong);
+}
+/* min-height matches the stepper, so "Buy now" stays a full-size button when it wraps to its own row. */
+.addBtn { flex: 1; min-width: 150px; min-height: 52px; }
+.buyBtn { flex: 1; min-width: 130px; min-height: 52px; box-shadow: none; }
+
+.shipping { display: flex; gap: 8px; align-items: center; margin-top: 18px; }
+.shippingIcon { color: var(--ak-text-faint); }
+.shippingText { font: var(--ak-t-caption); color: var(--ak-text-faint); }
+
+/* Stacked layout: the viewer sits on top, so round its top corners instead. */
+@media (max-width: 770px) {
+  .stage { border-radius: var(--ak-radius-2xl) var(--ak-radius-2xl) 0 0; }
+}

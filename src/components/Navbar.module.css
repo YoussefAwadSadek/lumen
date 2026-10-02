@@ -1,0 +1,108 @@
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--ak-crimson-deep), var(--ak-crimson-stage));
+  z-index: 701;
+  pointer-events: none;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 300ms var(--ak-ease-cinematic), border 300ms var(--ak-ease-cinematic);
+}
+.scrolled {
+  background: var(--ak-surface-glass);
+  backdrop-filter: var(--ak-blur-glass);
+  -webkit-backdrop-filter: var(--ak-blur-glass);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.flame { color: var(--ak-crimson-stage); }
+.wordmark {
+  font: 700 1.2rem/1 'Space Grotesk', sans-serif;
+  letter-spacing: 0.3em;
+  color: var(--ak-text-strong);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-left: auto;
+}
+.link {
+  font: var(--ak-t-label);
+  letter-spacing: 0.08em;
+  color: var(--ak-text-muted);
+  text-decoration: none;
+  transition: color 180ms;
+}
+.link:hover { color: var(--ak-text-strong); }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.iconBtn {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--ak-radius-full);
+  border: none;
+  background: transparent;
+  color: var(--ak-text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 180ms;
+}
+.iconBtn:hover { background: var(--ak-surface-2); }
+.menuBtn { display: none; }
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--ak-pair-badge-crimson-bg);
+  color: var(--ak-pair-badge-crimson-fg);
+  font: 700 0.68rem/18px 'Space Grotesk', sans-serif;
+  text-align: center;
+}
+
+@media (max-width: 940px) {
+  .links { display: none; }
+  .menuBtn { display: flex; }
+}

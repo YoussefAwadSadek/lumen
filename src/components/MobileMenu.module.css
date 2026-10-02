@@ -1,0 +1,37 @@
+.scrim { z-index: 500; }
+
+.panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: min(320px, 84vw);
+  background: var(--ak-surface-1);
+  box-shadow: var(--ak-shadow-elevated);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.wordmark {
+  font: 700 1.05rem/1 'Space Grotesk', sans-serif;
+  letter-spacing: 0.3em;
+  color: var(--ak-text-strong);
+}
+
+.link {
+  font: var(--ak-t-h4);
+  color: var(--ak-text-main);
+  text-decoration: none;
+  padding: 14px 10px;
+  border-radius: var(--ak-radius-md);
+  transition: background 180ms;
+}
+.link:hover { background: var(--ak-surface-2); }

@@ -1,0 +1,26 @@
+.stack {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ak-pair-surface-elevated-bg);
+  color: var(--ak-pair-surface-elevated-fg);
+  border-radius: var(--ak-radius-md);
+  box-shadow: var(--ak-shadow-elevated);
+  padding: 13px 20px;
+  font: var(--ak-t-ui);
+  max-width: 88vw;
+}
+.icon { color: var(--ak-gold); }

@@ -1,0 +1,72 @@
+.footer {
+  border-top: 1px solid var(--ak-border-soft);
+  padding: 64px 24px 32px;
+}
+
+.top { display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; }
+
+.brand { flex: 1 1 260px; }
+.logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.flame { color: var(--ak-crimson-stage); }
+.wordmark {
+  font: 700 1.05rem/1 'Space Grotesk', sans-serif;
+  letter-spacing: 0.3em;
+  color: var(--ak-text-strong);
+}
+.tagline { font: var(--ak-t-body-sm); color: var(--ak-text-muted); max-width: 300px; margin: 0; }
+
+.col { flex: 0 1 auto; }
+.heading {
+  font: var(--ak-t-overline);
+  letter-spacing: var(--ak-tracking-wide);
+  color: var(--ak-gold);
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+.links { display: flex; flex-direction: column; gap: 10px; }
+.link {
+  font: var(--ak-t-body-sm);
+  color: var(--ak-text-muted);
+  text-decoration: none;
+  transition: color 180ms;
+}
+.link:hover { color: var(--ak-text-strong); }
+
+.newsletter { flex: 1 1 300px; }
+.subscribe { display: flex; gap: 10px; }
+.email { flex: 1; padding: 13px 14px; }
+.go {
+  background: var(--ak-pair-badge-gold-bg);
+  color: var(--ak-pair-badge-gold-fg);
+  border: none;
+  border-radius: var(--ak-radius-md);
+  padding: 0 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 180ms;
+}
+.go:hover { background: var(--ak-gold-hover); }
+.note { font: var(--ak-t-caption); color: var(--ak-text-faint); margin: 10px 0 0; }
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--ak-border-soft);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.copyright { font: var(--ak-t-caption); color: var(--ak-text-faint); }
+.legal { display: flex; gap: 20px; }
+.legalLink {
+  background: none;
+  border: none;
+  color: var(--ak-text-faint);
+  font: var(--ak-t-caption);
+  cursor: pointer;
+  transition: color 180ms;
+}
+.legalLink:hover { color: var(--ak-text-muted); }

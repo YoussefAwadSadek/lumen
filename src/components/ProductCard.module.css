@@ -1,0 +1,96 @@
+.card {
+  overflow: hidden;
+  transition: transform 300ms var(--ak-ease-cinematic), box-shadow 300ms var(--ak-ease-cinematic);
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ak-shadow-panel-hover);
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+}
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  transition: transform 700ms var(--ak-ease-cinematic);
+  will-change: transform;
+}
+.media:hover .image { transform: scale(1.06) rotate(1.2deg); }
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font: 700 0.72rem/1 'Space Grotesk', sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 7px 11px;
+  border-radius: var(--ak-radius-sm);
+}
+.badgeGold { background: var(--ak-pair-badge-gold-bg); color: var(--ak-pair-badge-gold-fg); }
+.badgeCrimson { background: var(--ak-pair-badge-crimson-bg); color: var(--ak-pair-badge-crimson-fg); }
+
+.actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.action {
+  width: 38px;
+  height: 38px;
+  transition: transform 180ms;
+}
+.action:hover { transform: scale(1.1); }
+.wished { color: var(--ak-crimson-stage); }
+
+.stock {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: var(--ak-surface-glass);
+  backdrop-filter: var(--ak-blur-soft);
+  -webkit-backdrop-filter: var(--ak-blur-soft);
+  color: var(--ak-text-muted);
+  font: var(--ak-t-caption);
+  padding: 6px 11px;
+  border-radius: var(--ak-radius-sm);
+}
+.stockWarn { color: var(--ak-pair-timer-warn-fg); }
+
+.body { padding: 20px 20px 22px; }
+.category {
+  font: var(--ak-t-overline);
+  letter-spacing: var(--ak-tracking-wide);
+  color: var(--ak-gold);
+  text-transform: uppercase;
+}
+.name {
+  font: 700 1.28rem/1.25 'Cairo', sans-serif;
+  color: var(--ak-text-strong);
+  margin: 8px 0 4px;
+}
+.scent { font: var(--ak-t-body-sm); color: var(--ak-text-muted); }
+
+.rating { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.stars { color: var(--ak-gold); font-size: 0.9rem; letter-spacing: 2px; }
+.ratingText { font: var(--ak-t-caption); color: var(--ak-text-faint); }
+
+.prices { display: flex; align-items: baseline; gap: 10px; margin-top: 14px; }
+.price { font: 700 1.35rem/1 'Space Grotesk', sans-serif; color: var(--ak-text-strong); }
+.oldPrice {
+  font: 500 0.95rem/1 'Space Grotesk', sans-serif;
+  color: var(--ak-text-faint);
+  text-decoration: line-through;
+}
+
+.add {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+}

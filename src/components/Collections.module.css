@@ -1,0 +1,77 @@
+.section {
+  padding: 40px 24px 96px;
+  scroll-margin-top: 60px;
+}
+.title { margin: 12px 0 36px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 320px;
+  border: none;
+  border-radius: var(--ak-radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  box-shadow: var(--ak-shadow-panel);
+  transition: transform 300ms var(--ak-ease-cinematic), box-shadow 300ms var(--ak-ease-cinematic);
+  background: var(--ak-surface-1);
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ak-shadow-panel-hover);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.9);
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,5,5,0.05) 30%, rgba(5,5,5,0.88) 100%);
+}
+
+.content {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+}
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ak-radius-full);
+  background: var(--ak-gold-tint);
+  color: var(--ak-gold);
+  margin-bottom: 12px;
+}
+.name {
+  display: block;
+  font: 700 1.3rem/1.2 'Cairo', sans-serif;
+  color: var(--ak-text-strong);
+}
+.count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: var(--ak-t-caption);
+  color: var(--ak-text-muted);
+  margin-top: 6px;
+}
+.arrow { color: var(--ak-gold); }

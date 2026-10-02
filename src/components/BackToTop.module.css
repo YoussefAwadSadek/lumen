@@ -1,0 +1,19 @@
+.button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 400;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--ak-radius-full);
+  border: none;
+  background: var(--ak-surface-2);
+  color: var(--ak-gold);
+  cursor: pointer;
+  box-shadow: var(--ak-shadow-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 180ms;
+}
+.button:hover { transform: translateY(-3px); }
