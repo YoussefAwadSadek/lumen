@@ -1,7 +1,6 @@
 # LUMEN — showcase site
 
-One-page storefront for LUMEN hand-poured candles, built from the Claude Design file
-`LUMEN Showcase.dc.html` (the export lives in the `# Prompt_ Modern 3D …` folder and is the visual reference).
+One-page storefront for LUMEN hand-poured candles.
 
 React 19 + TypeScript + Vite, plain CSS (design tokens + CSS Modules). No backend.
 
